@@ -24,4 +24,4 @@ Registrar resultados de Semgrep, pip-audit, Trivy, Checkov y DAST.
 ## Fase 7 — Cierre
 Consolidar evidencias, limitaciones, mejoras y cuestionario del taller.
 
-> No completar resultados experimentales sin haber ejecutado las pruebas.
+
