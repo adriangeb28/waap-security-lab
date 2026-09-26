@@ -1,0 +1,24 @@
+services:
+  target:
+    image: bkimminich/juice-shop:latest
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    networks:
+      - labnet
+
+  waap:
+    image: owasp/modsecurity-crs:nginx
+    ports:
+      - "${WAAP_PORT:-8080}:8080"
+    environment:
+      BACKEND: http://target:3000
+      PARANOIA: ${PARANOIA_LEVEL:-1}
+      BLOCKING_PARANOIA: ${PARANOIA_LEVEL:-1}
+    depends_on:
+      - target
+    networks:
+      - labnet
+
+networks:
+  labnet:
+    driver: bridge
