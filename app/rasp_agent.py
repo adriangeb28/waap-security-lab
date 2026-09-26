@@ -1,4 +1,3 @@
-"""RASP reutilizable para funciones sensibles del laboratorio."""
 import functools
 import logging
 import re
