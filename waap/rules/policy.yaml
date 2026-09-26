@@ -1,0 +1,9 @@
+policy:
+  paranoia: 1
+  decisions:
+    suspicious_status: 403
+  focus:
+    - sql-injection
+    - xss
+    - path-traversal
+  note: "Rules are versioned as code and reviewed before deployment."

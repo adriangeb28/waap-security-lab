@@ -1,11 +1,5 @@
-.env
-.venv/
 __pycache__/
-*.py[cod]
-*.pkl
+*.pyc
+.env
+waap/ml/model.pkl
 logs/*.jsonl
-logs/*.csv
-evidencias/**/*.csv
-evidencias/**/*.json
-*.log
-.DS_Store

@@ -1,24 +1,26 @@
 services:
-  target:
-    image: bkimminich/juice-shop:latest
-    ports:
-      - "${APP_PORT:-3000}:3000"
-    networks:
-      - labnet
+  lab-app:
+    build: ./app
+    environment:
+      RASP_ENABLED: "1"
+    expose:
+      - "5000"
+    networks: [security-lab]
+    restart: unless-stopped
 
   waap:
     image: owasp/modsecurity-crs:nginx
-    ports:
-      - "${WAAP_PORT:-8080}:8080"
     environment:
-      BACKEND: http://target:3000
-      PARANOIA: ${PARANOIA_LEVEL:-1}
-      BLOCKING_PARANOIA: ${PARANOIA_LEVEL:-1}
+      BACKEND: http://lab-app:5000
+      PORT : "8080"
+    ParANOIA: "${PARANOIA:-1}"
+    ports:
+      - "${WAAP_PORT:-8081}:8080"
     depends_on:
-      - target
-    networks:
-      - labnet
+      - lab-app
+    networks: [security-lab]
+    restart: unless-stopped
 
-networks:
-  labnet:
+nnetworks:
+  security-lab:
     driver: bridge

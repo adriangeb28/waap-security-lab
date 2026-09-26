@@ -1,0 +1,7 @@
+tecnica,reglas_CRS,IA_ML,RASP
+SQLi clásico,SI,SI,SI
+SQLi URL encoded,NO,NO,SI
+SQLi fragmentado,NO,NO,SI
+XSS básico,SI,SI,NO
+Traversal,SI,SI,SI
+Bot burst,SI,SI,N/A

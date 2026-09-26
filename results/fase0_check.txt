@@ -1,0 +1,1 @@
+LAB CHECKLIST (run-time): docker compose ps / curl /health

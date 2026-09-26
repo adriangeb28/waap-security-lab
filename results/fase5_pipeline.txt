@@ -1,0 +1,4 @@
+PIPELINE TEST FIXTURE
+Baseline esperado: SAST PASS | SCA PASS | BUILD PASS | TRIVY PASS* | CHECKOV PASS* | DAST PASS*
+Inyección de consulta insegura: SAST FAIL (gate).
+* El estado real depende de las versiones de dependencias e imágenes disponibles al ejecutar CI.

@@ -1,0 +1,1 @@
+Expected CRS checks: classic SQLi -> 403; benign search -> 200; evasive variants are candidates for ML/RASP.

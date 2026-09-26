@@ -1,0 +1,1 @@
+Targets: /api/login, /api/items, /api/file. Categories: SQL injection, XSS, path traversal.

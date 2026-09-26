@@ -1,0 +1,11 @@
+case,risk_score,decision,expected,threshold
+normal-home,0.0488,NORMAL,LEGITIMO,0.2
+normal-search,0.0313,NORMAL,LEGITIMO,0.2
+normal-filter,0.0611,NORMAL,LEGITIMO,0.2
+normal-login,0.0506,NORMAL,LEGITIMO,0.2
+normal-product,0.0597,NORMAL,LEGITIMO,0.2
+sqli-classic,0.2795,ANOMALO,ATAQUE,0.2
+sqli-encoded,0.0582,NORMAL,ATAQUE,0.2
+xss,1.3818,ANOMALO,ATAQUE,0.2
+traversal,0.5,ANOMALO,ATAQUE,0.2
+bot-burst,0.2113,ANOMALO,ATAQUE,0.2

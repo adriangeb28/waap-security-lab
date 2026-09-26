@@ -1,0 +1,8 @@
+REPRODUCIBLE RASP TEST FIXTURE
+
+This file records the deterministic unit-test behavior of the RASP guard. It is not a screenshot or a claim of a completed Docker run.
+
+benign query: PASS
+SQL injection query: BLOCKED
+path traversal pattern: BLOCKED by the same runtime guard
+reference latency fixture: 1.9 ms without guard; 3.6 ms with guard; 1.7 ms overhead
