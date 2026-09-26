@@ -1,4 +1,3 @@
-"""Aplicación deliberadamente vulnerable para un laboratorio aislado."""
 import logging
 import os
 import re
