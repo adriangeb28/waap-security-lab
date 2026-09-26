@@ -1,0 +1,48 @@
+name: Seguridad DevSecOps
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Semgrep
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: p/python
+
+      - name: Instalar dependencias de Python
+        run: pip install -r app/requirements.txt
+
+      - name: pip-audit
+        run: |
+          pip install pip-audit
+          pip-audit -r app/requirements.txt
+
+      - name: Build imagen RASP
+        run: docker build -t waap-rasp-demo -f app/Dockerfile .
+
+      - name: Trivy
+        uses: aquasecurity/trivy-action@0.24.0
+        with:
+          image-ref: waap-rasp-demo
+          format: table
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
+
+      - name: Checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: .
+          soft_fail: true
+
+      - name: DAST placeholder
+        run: echo "Ejecutar DAST/ZAP contra el entorno desplegado antes de producción."
+
+      - name: Gate de despliegue
+        run: bash scripts/deploy_rules.sh
