@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.pkl
+logs/*.jsonl
+logs/*.csv
+evidencias/**/*.csv
+evidencias/**/*.json
+*.log
+.DS_Store
